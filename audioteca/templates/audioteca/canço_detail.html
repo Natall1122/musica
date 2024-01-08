@@ -1,0 +1,40 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="margePag">
+    <h1>TÍTOL: {{ canço.titol }}</h1>
+    <p><a href="{% url 'cantant-detail' canço.cantant.pk %}">{{canço.cantant}}</a></p>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 mt-3">
+            <div style="margin-left:20px;margin-top:20px">
+                <h4>Lletra</h4>
+                <pre>
+                    {{canço.lletra}}
+                </pre>
+                
+            </div>
+          </div>
+  
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mt-3">
+            <h4>Més info:</h4>
+            <ul>
+                <li><strong>Album: </strong> <a href="{% url 'album-detail' canço.album.pk %}">{{canço.album}}</a></li>
+                <li><strong>Duració: </strong> {{ canço.duració }} min</li>
+            </ul>               
+            <div style="margin-top: 2em;">
+                <iframe width="560" height="315" src={{canço.video}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>  
+    </div>
+    
+
+
+   
+
+   
+
+
+</div>
+    
+{% endblock %}

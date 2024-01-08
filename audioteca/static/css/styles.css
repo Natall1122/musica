@@ -1,0 +1,157 @@
+
+/*                  links              */
+a:link,
+a:visited,
+a:active,
+a:hover {
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 1.2em;
+  }
+
+.enllaç:link, .enllaç:visited {
+    color: #F55600;
+}
+
+.enllaç:hover {
+    color: #B53F00;
+}
+
+.enllaç:active {
+    color: #752900;
+}
+
+/*          BODY        */
+
+p{
+  letter-spacing: 0.1em;
+}
+
+
+/*        LLISTA        */
+
+.cantants{
+  text-decoration: none;
+}
+
+
+
+/*               TITOLS             */
+  
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #752900;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3{
+  font-size: 1.1em;
+}
+
+h4{
+  font-weight: bold;
+  margin: 0em;
+  color: #F55600
+}
+
+
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  color: #F55600;
+}
+
+h6{
+  font-weight: bold;
+  margin: 0em;
+}
+
+
+#titol{
+  color: white;
+  text-align: center;
+  margin-top: 1em;
+}
+
+/*            PÀGINES             */
+
+#index{
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+.margePag{
+  margin-left: 15em;
+}
+
+
+/*            IMATGES             */
+
+img{
+  object-fit: cover;
+  height: 20em;
+  width: 15em;
+}
+
+.imgCard{
+  height: 15em;
+  width: 15em;
+}
+
+.imgCard:hover{
+  opacity: 0.7;
+}
+
+
+/*              FOOTER              */
+
+footer {
+  padding: 1em;
+  align-items: center;
+  color: white;
+  background-color: black;
+  width: 100%;
+  position: absolute;
+  bottom: -20em; 
+  left: 0;
+}
+
+#copyright{
+  font-size: 0.7em;
+  color: lightgray;
+  margin-top: 2.5%;
+  
+}
+
+
+
+
+/*              CARDS          */
+
+.card-text{
+  text-indent: 2em;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+}
+
+#boto {
+  padding: 0.5em 1em;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  position: relative;
+  background-color: white;
+  color: #B53F00;
+  border: 2px solid #B53F00;
+}
+
+#boto:hover {
+  background-color: #B53F00;
+  color: white;
+}

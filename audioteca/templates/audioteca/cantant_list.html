@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="margePag">
+  <h1>Llista de cantants</h1>
+  <p>Explora la rica paleta musical de la nostra audioteca al descobrir la diversitat de cantants destacats que formen part del nostre exclusiu repertori...</p>
+
+  <div class="container" style="margin-left: 0em; margin-bottom:5em">
+    <div class="row">      
+      {% if cantant_list %}
+        {% for cantant in cantant_list %}
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mt-3">
+            <div class="card text-center" style="height: 23em;">
+              <div class="card-body">
+                <a href="{{ cantant.get_absolute_url }}"><img class="imgCard" src="/static/imatges/{{cantant.imatge.name}}" alt=""></a>
+                <a href="{{ cantant.get_absolute_url }}"><h6 class="mt-3">{{cantant.nom}} {{cantant.cognom}}</h6></a>
+              </div>
+            </div>
+          </div>  
+            {% endfor %}
+      {% else %}
+          <p>No hi ha cantants ara mateix registrats</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+  
+
+{% endblock %}

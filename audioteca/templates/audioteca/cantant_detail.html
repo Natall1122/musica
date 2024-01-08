@@ -1,0 +1,57 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="margePag">
+    <h1>NOM: {{ cantant.nom }}, {{ cantant.cognom }}</h1>
+    <p>{{cantant.naixement}} - {% if cantant.mort %}{{cantant.mort}}{% endif %}</p>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 mt-3">
+
+                <img src="/static/imatges/{{cantant.imatge.name}}"/>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 mt-3">
+                <div>
+                    {{cantant.descripcio}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-left:20px;margin-top:20px">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-3">
+                    <h4>Àlbums</h4>
+                    <dl>
+                    {% for album in cantant.album_set.all %}
+                        <ul>
+                            <li>
+                                <dt><a href="{% url 'album-detail' album.pk %}">{{album}}</a></dt>
+                            </li>
+                            <dd>{{album.duració}} min</dd>
+                        </ul>
+
+                        {% empty %}
+                        <p>Este cantant no té àlbums</p>
+                    {% endfor %}
+                    </dl>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-3">
+                    <div style="margin-top: 20px;">
+                        <h4>  Premis  </h4>
+                        <p>Aquest cantant ha guanyat: {{cantant.premis}} premis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
+{% endblock %}
+
+
+

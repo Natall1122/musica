@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}    
+<div class="margePag">
+    <h1>GÈNERE: {{ genere.nom }}</h1>
+
+
+        <h4>Àlbums</h4>
+        <dl>
+        {% for album in genere.album_set.all %}
+            <ul>
+                <li>
+                    <dt><a href="{% url 'album-detail' album.pk %}">{{album}}</a></dt>
+                </li>
+            </ul>
+
+            {% empty %}
+            <p>No hi ha cap àlbum registrat amb aquest gènere</p>
+        {% endfor %}
+        </dl>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="margePag">
+    <h1>GÈNERES</h1>
+    <p>Descobreix la diversitat musical amb una àmplia gamma de gèneres, des del rock clàssic fins a les últimes tendències del pop. Informació detallada per a una exploració auditiva completa.</p>
+
+
+    {% if genere_list %}
+    <ul>
+
+      {% for genere in genere_list %}
+      <li>
+        <a href="{{ genere.get_absolute_url }}">{{genere.nom}}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>No hi ha gèneres ara mateix registrats</p>
+    {% endif %}
+</div>
+{% endblock %}

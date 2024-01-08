@@ -1,0 +1,46 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="margePag">
+    <h1>TÍTOL: {{ album.titol }}</h1>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mt-3">
+            
+                <div>
+                    <h4>Cançons</h4>
+                    <dl>
+                    {% for canço in album.canço_set.all %}
+                        <ul>
+                            <li>
+                                <dt><a href="{% url 'canço-detail' canço.pk %}">{{canço}}</a></dt>
+                            </li>
+                            <dd>{{canço.duració}} min</dd>
+                        </ul>
+
+                        {% empty %}
+                        <p>Este àlbum no te cançons</p>
+                    {% endfor %}
+                    </dl>
+                </div>
+          </div>
+  
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-3">
+            <div>
+                <h4>Més info:</h4>
+                <ul>
+                    <li><strong>Preu: </strong> {{album.preu}}€</li>
+                    <li><strong>Duració: </strong> {{ album.duració }} min</li>
+                    {% for genere in album.generes.all %}
+                        <li><strong>Gènere: </strong> <a href="{% url 'genere-detail' genere.pk %}">{{genere}}</a></li>
+                        {% empty %}
+                    <p>Este àlbum no te gènere</p>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>  
+    </div>
+
+</div>
+    
+{% endblock %}
